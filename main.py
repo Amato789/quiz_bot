@@ -7,10 +7,11 @@ from core.handlers import basic
 from core.handlers import registration
 from core.handlers import quiz
 from core.utils.reg_steps import StepsReg
-from aiogram.methods import GetUpdates
+from core.utils.commands import set_commands
 
 
 async def start_bot(bot: Bot):
+    await set_commands(bot)
     await bot.send_message(ADMIN_ID, text="Bot started!")
 
 
